@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+         xmlns="http://nfu.edu.csie.ccsd/#" 
+         xml:base="http://csie.nfu.edu.tw/BGC0303/40843244">
+
+    <Test_Image rdf:ID="Test_Image_0">
+        <Similarity>
+            <Test_Image rdf:about="Test_Image_1"/>
+        </Similarity>
+    </Test_Image>
+
+    </Test_Image>
+
+    <File rdf:ID="Mnist_Dataset">
+        <Include>
+            <Training_Image rdf:about="#Training_Image_0"/>
+        </Include>
+        <Belong_To>
+            <Label rdf:about="#0"/>
+        </Belong_To>
+    </File>
+
+</rdf:RDF>
