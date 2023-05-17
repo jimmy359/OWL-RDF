@@ -43,6 +43,12 @@
         <rdfs:range rdf:resource="#Test_Image"/>
     </owl:SymmetricProperty>
 
+    <owl:ObjectProperty rdf:ID="Include">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseProperty"/>
+        <rdfs:domain rdf:resource="#Training_Image"/>
+        <rdfs:range rdf:resource="#File"/>
+    </owl:ObjectProperty>
+
     <owl:ObjectProperty rdf:ID="Belong">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseProperty"/>
         <owl:InverseOf rdf:resource="#Include"/>
