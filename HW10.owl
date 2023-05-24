@@ -1,4 +1,3 @@
-<?xml version="1.0"?>
 <rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#" 
          xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" 
@@ -18,18 +17,6 @@
         <rdfs:subClassOf rdf:resource="#Image_Dataset"/>
     </owl:Class>
 
-    <owl:Class rdf:ID="Label">
-        <rdfs:subClassOf rdf:resource="#Image_Dataset"/>
-    </owl:Class>
-
-    <owl:Class rdf:ID="Model_Architecture">
-        <rdfs:subClassOf rdf:resource="#Model"/>
-    </owl:Class>
-
-    <owl:Class rdf:ID="Training_Method">
-        <rdfs:subClassOf rdf:resource="#Model"/>
-    </owl:Class>
-
     <owl:Class rdf:ID="Training_Image">
         <rdfs:subClassOf rdf:resource="#File"/>
     </owl:Class>
@@ -39,27 +26,26 @@
     </owl:Class>
 
     <owl:SymmetricProperty rdf:ID="Similarity">
-        <rdfs:domain rdf:resource="#Test_Image"/>
-        <rdfs:range rdf:resource="#Test_Image"/>
+        <rdfs:domain rdf:resource="#Image_Dataset"/>
+        <rdfs:range rdf:resource="#Image_Dataset"/>
     </owl:SymmetricProperty>
+
+    <owl:ObjectProperty rdf:ID="Has_Same_Label">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="#Test_Image"/>
+        <rdfs:range rdf:resource="#Image_Dataset"/>
+    </owl:ObjectProperty>
 
     <owl:ObjectProperty rdf:ID="Include">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseProperty"/>
-        <rdfs:domain rdf:resource="#Training_Image"/>
-        <rdfs:range rdf:resource="#File"/>
-    </owl:ObjectProperty>
-
-    <owl:ObjectProperty rdf:ID="Belong">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseProperty"/>
-        <owl:InverseOf rdf:resource="#Include"/>
         <rdfs:domain rdf:resource="#File"/>
         <rdfs:range rdf:resource="#Training_Image"/>
     </owl:ObjectProperty>
 
-    <owl:ObjectProperty rdf:ID="Belong_To">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="#File"/>
-        <rdfs:range rdf:resource="#Label"/>
+    <owl:ObjectProperty rdf:ID="Belong">
+        <rdf:type rdf:resource="#Include"/>
+        <rdfs:domain rdf:resource="#Training_Image"/>
+        <rdfs:range rdf:resource="#File"/>
     </owl:ObjectProperty>
 
 </rdf:RDF>
