@@ -1,23 +1,30 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
-         xmlns="http://nfu.edu.csie.ccsd/#" 
-         xml:base="http://csie.nfu.edu.tw/BGC0303/40843244">
+         xmlns="http://csie.nfu.edu.tw/BGC0303/40843244#" 
+         xml:base="http://csie.nfu.edu.tw/BGC0303/44">
+
+    <Image_Dataset rdf:ID="Image_File0_0">
+        <Similarity>
+            <Image_Dataset rdf:about="Image_File0_1"/>
+        </Similarity>
+    </Image_Dataset>
+
+    <File rdf:ID="Image_File1">
+        <Include>
+            <Training_Image rdf:about="#Train_Image_0"/>
+        </Include>
+    </File>
 
     <Test_Image rdf:ID="Test_Image_0">
-        <Similarity>
-            <Test_Image rdf:about="Test_Image_1"/>
-        </Similarity>
+        <Has_Same_Label>
+            <Test_Image rdf:about="#Test_Image_1"/>
+        </Has_Same_Label>
     </Test_Image>
 
+    <Test_Image rdf:ID="Test_Image_1">
+        <Has_Same_Label>
+            <Test_Image rdf:about="#Test_Image_2"/>
+        </Has_Same_Label>
     </Test_Image>
-
-    <File rdf:ID="Mnist_Dataset">
-        <Include>
-            <Training_Image rdf:about="#Training_Image_0"/>
-        </Include>
-        <Belong_To>
-            <Label rdf:about="#0"/>
-        </Belong_To>
-    </File>
 
 </rdf:RDF>
