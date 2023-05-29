@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
-         xmlns="http://csie.nfu.edu.tw/BGC0303/40843244#" 
-         xml:base="http://csie.nfu.edu.tw/BGC0303/44">
+<rdf:RDF xml:base="http://nfu.edu.tw/BGC0303/40843244/" 
+         xmlns="http://nfu.edu.csie.ccsd/BGC0303/40843244/#" 
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
 
     <Image_Dataset rdf:ID="Image_File0_0">
         <Similarity>
@@ -9,11 +9,9 @@
         </Similarity>
     </Image_Dataset>
 
-    <File rdf:ID="Image_File1">
-        <Include>
-            <Training_Image rdf:about="#Train_Image_0"/>
-        </Include>
-    </File>
+    <Training_Image rdf:ID="Training_Image_0">
+        <Belong rdf:resource="#Image_File1"/>
+    </Training_Image>
 
     <Test_Image rdf:ID="Test_Image_0">
         <Has_Same_Label>
