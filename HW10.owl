@@ -1,9 +1,4 @@
-<rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#" 
-         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
-         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" 
-         xml:base="http://csie.nfu.edu.tw/BGC0303/40843244">
-
-    <owl:Class rdf:ID="Image_Recognition"></owl:Class>
+<rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xml:base="http://nfu.edu.csie.ccsd/BGC0303/40843244/">
 
     <owl:Class rdf:ID="Image_Dataset">
         <rdfs:subClassOf rdf:resource="#Image_Recognition"/>
@@ -36,16 +31,15 @@
         <rdfs:range rdf:resource="#Image_Dataset"/>
     </owl:ObjectProperty>
 
-    <owl:ObjectProperty rdf:ID="Include">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseProperty"/>
-        <rdfs:domain rdf:resource="#File"/>
-        <rdfs:range rdf:resource="#Training_Image"/>
-    </owl:ObjectProperty>
-
     <owl:ObjectProperty rdf:ID="Belong">
-        <rdf:type rdf:resource="#Include"/>
         <rdfs:domain rdf:resource="#Training_Image"/>
         <rdfs:range rdf:resource="#File"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:ID="Include">
+        <owl:inverseOf rdf:resource="#Belong"/>
+        <rdfs:domain rdf:resource="#File"/>
+        <rdfs:range rdf:resource="#Training_Image"/>
     </owl:ObjectProperty>
 
 </rdf:RDF>
